@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Homepage</title>
+        <meta charset="utf-8" content="text/html">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable = 1.0">
 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="resources/main.css">
 
         <!-- JS -->
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="resources/main.js"></script>
+
+        <!--Compiled-->
+        <!--<script type="text/javascript" src="resources/main.js"></script>-->
+
+        <!--Debug-->
+        <script data-main="js/main" src="build/require.js"></script>
     </head>
-    <body>
-        <img id="map" src="./img/world-map.gif"/>
+
+    <body class="loading">
+        <div id="header">
+            PHOTOMAP
+        </div>
+
+        <div id="mainWrapper" class="folders" data-folders-path="/"></div>
+
+        <div id="buttons">
+            <div id="openCamera" class="button"></div>
+            <div id="newFolder" class="button"></div>
+        </div>
     </body>
 </html>

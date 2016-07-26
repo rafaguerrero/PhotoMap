@@ -1,12 +1,24 @@
 /**
- * Created by rafaelguerreroclemente on 24/7/16.
+ * Created by rafaelguerreroclemente
  */
 
+@import "_header.scss";
+@import "_button.scss";
+@import "_folders.scss";
+
 body {
+  display: block;
+  width: 100%;
   margin:0px;
   padding:0px;
 }
 
-#map {
-  height: 100%;
+.loading {
+  #mainWrapper, #buttons {
+    display: none;
+  }
+}
+
+#mainWrapper {
+  margin-top:50px
 }

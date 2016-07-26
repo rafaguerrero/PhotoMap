@@ -1,8 +1,13 @@
 /**
- * Created by rafaelguerreroclemente on 24/7/16.
+ * Created by rafaelguerreroclemente
  */
 
-require(["Map"], function(Map) {
+require(["Camera",
+         "NewFolder",
+         "Folders",
+         "utils/FileSystem"],
+
+function(Camera, NewFolder, Folders, FileSystem) {
 
     var app = {
         initialize: function () {
@@ -10,7 +15,15 @@ require(["Map"], function(Map) {
         },
 
         onDeviceReady: function () {
-            var map = new Map();
+            var folders = document.querySelector(".folders");
+
+            FileSystem.initialize(function(){
+                new Folders(folders);
+                document.body.classList.remove("loading");
+            });
+
+            new NewFolder(document.querySelector("#newFolder"), folders);
+            new Camera(document.querySelector("#openCamera"));
         }
     };
 
