@@ -1,0 +1,21 @@
+({
+    baseUrl: "../js/",
+
+    optimizeCss: "none",
+
+    paths: {
+        "requirejs": "../build/require",
+    },
+
+    include: ['requirejs', 'main'],
+
+    out: "../resources/main.js",
+
+    preserveLicenseComments: false,
+
+    pragmas: {
+        productionExclude: true
+    },
+
+    findNestedDependencies: true
+})
