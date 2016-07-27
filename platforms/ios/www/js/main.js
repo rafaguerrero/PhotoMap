@@ -19,11 +19,11 @@ function(Camera, NewFolder, Folders, FileSystem) {
 
             FileSystem.initialize(function(){
                 new Folders(folders);
+                new NewFolder(document.querySelector("#newFolder"), folders);
+                new Camera(document.querySelector("#openCamera"));
+
                 document.body.classList.remove("loading");
             });
-
-            new NewFolder(document.querySelector("#newFolder"), folders);
-            new Camera(document.querySelector("#openCamera"));
         }
     };
 

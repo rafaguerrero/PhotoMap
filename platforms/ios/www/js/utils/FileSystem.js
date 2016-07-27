@@ -34,44 +34,33 @@ define(function() {
         },
 
         createFolder : function(path, successCallback, errorCallback) {
-            if(!_fileSystem) {
-                _callbacks.push(this.createFolder.bind(this, path, successCallback, errorCallback));
-
-            } else {
-                _fileSystem.root.getDirectory(ROOT_FOLDER + path,
-                    { create : true, exclusive : false },
-                    successCallback,
-                    errorCallback
-                );
-            }
+            _fileSystem.root.getDirectory(ROOT_FOLDER + path,
+                { create : true, exclusive : false },
+                successCallback,
+                errorCallback
+            );
         },
 
         iterate : function(path, successCallback, errorCallback) {
+            window.resolveLocalFileSystemURL(
+                _appRootDir.nativeURL,
 
-            if(!_appRootDir) {
-                _callbacks.push(this.iterate.bind(this, path, successCallback, errorCallback));
+                function (fileSystem) {
+                    var reader = fileSystem.createReader();
 
-            } else {
-                window.resolveLocalFileSystemURL(
-                    _appRootDir.nativeURL,
+                    reader.readEntries(
+                        function(entries){
+                            for(var i = 0, length = entries.length; i < length; i++) {
+                                successCallback(entries[i]);
+                            }
+                        },
 
-                    function (fileSystem) {
-                        var reader = fileSystem.createReader();
+                        errorCallback
+                    );
+                },
 
-                        reader.readEntries(
-                            function(entries){
-                                for(var i = 0, length = entries.length; i < length; i++) {
-                                    successCallback(entries[i]);
-                                }
-                            },
-
-                            errorCallback
-                        );
-                    },
-
-                    errorCallback
-                );
-            }
+                errorCallback
+            );
         }
     };
 
