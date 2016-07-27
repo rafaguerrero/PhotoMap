@@ -16,7 +16,11 @@
   padding-bottom: 100%;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: green
+  background-color: green;
+
+  .subfolders & {
+    background-color: red;
+  }
 }
 
 .folder__label {

@@ -43,7 +43,7 @@ define(function() {
 
         iterate : function(path, successCallback, errorCallback) {
             window.resolveLocalFileSystemURL(
-                _appRootDir.nativeURL,
+                _appRootDir.nativeURL + path,
 
                 function (fileSystem) {
                     var reader = fileSystem.createReader();

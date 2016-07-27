@@ -29,8 +29,13 @@ define(["utils/FileSystem"], function(FileSystem) {
         this.element.appendChild(folder);
 
         folder.addEventListener("click", function(){
-            alert("Folder clicked");
-        });
+            var currentPath = this.element.getAttribute("data-folders-path");
+
+            this.element.setAttribute("data-folders-path", currentPath + folderData.name + "/");
+            this.element.classList.add("subfolders");
+
+            this.renderFolders();
+        }.bind(this));
     }
 
     function createFolder(folderData) {
