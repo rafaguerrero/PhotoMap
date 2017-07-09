@@ -24,15 +24,22 @@
     </head>
 
     <body class="loading">
-        <div id="header">
-            PHOTOMAP
-        </div>
-
         <div id="mainWrapper" class="folders" data-folders-path=""></div>
 
-        <div id="buttons">
-            <div id="openCamera" class="button"></div>
-            <div id="newFolder" class="button"></div>
+        <div id="interface">
+            <div id="header">
+                PHOTOMAP
+            </div>
+
+            <div class="newFolderPopup">
+                <button class="newFolderPopup__button--geo newFolderPopup__button">Use current geo</button>
+                <button class="newFolderPopup__button--text newFolderPopup__button">Select country</button>
+            </div>
+
+            <div id="buttons">
+                <div id="openCamera" class="button"></div>
+                <div id="newFolder" class="button"></div>
+            </div>
         </div>
     </body>
 </html>

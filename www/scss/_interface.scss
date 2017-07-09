@@ -1,0 +1,16 @@
+/**
+ * Created by rafaelguerreroclemente
+ */
+
+@import "interface/_button.scss";
+@import "interface/_header.scss";
+@import "interface/_newFolderPopup.scss";
+
+#interface {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}

@@ -2,12 +2,11 @@
  * Created by rafaelguerreroclemente
  */
 
-require(["Camera",
-         "NewFolder",
+require(["Interface",
          "Folders",
          "utils/FileSystem"],
 
-function(Camera, NewFolder, Folders, FileSystem) {
+function(Interface, Folders, FileSystem) {
 
     var app = {
         initialize: function () {
@@ -18,9 +17,8 @@ function(Camera, NewFolder, Folders, FileSystem) {
             var folders = document.querySelector(".folders");
 
             FileSystem.initialize(function(){
-                new Folders(folders);
-                new NewFolder(document.querySelector("#newFolder"), folders);
-                new Camera(document.querySelector("#openCamera"));
+                new Folders(document.querySelector(".folders"));
+                new Interface();
 
                 document.body.classList.remove("loading");
             });

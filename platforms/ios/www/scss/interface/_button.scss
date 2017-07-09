@@ -13,6 +13,7 @@
 .button {
   display: inline-block;
   float: right;
+  pointer-events: auto;
 
   &:after {
     content: "";

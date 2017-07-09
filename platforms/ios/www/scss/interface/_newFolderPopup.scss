@@ -1,0 +1,41 @@
+/**
+ * Created by rafaelguerreroclemente
+ */
+
+$buttonSize : 50px;
+$buttonMargin : 15px;
+
+.newFolderPopup {
+  display: none;
+
+  position: absolute;
+  top: 50%;
+
+  width: 80%;
+  margin-left: 10%;
+  background-color: #CCC;
+  padding: $buttonMargin;
+  box-sizing: border-box;
+  margin-top: -(($buttonSize * 2 + $buttonMargin * 3) / 2);
+
+  border: 1px solid black;
+  border-radius: 4px;
+
+  &.show {
+    display: block;
+  }
+}
+
+.newFolderPopup__button {
+  width: 100%;
+  height: $buttonSize;
+  border: 1px solid black;
+  border-radius: 4px;
+  pointer-events: auto;
+  background-color: white;
+
+  &:nth-child(n + 2) {
+    margin-top: $buttonMargin;
+  }
+}
+
